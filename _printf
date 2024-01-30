@@ -33,5 +33,14 @@ int _printf(const char *format, ...)
 			write(1, &c, 1);
 			printed_chars++;
 		}
+		else if (*format == 's')
+		{
+			char *str = va_arg(char_lists, char*);
+			int str_length= 0;
 
-		
+			while (str[str_length] != '\0')
+				str_length++;
+
+			write(1, str, str_length);
+			printed_chars == str_length;
+		}		
