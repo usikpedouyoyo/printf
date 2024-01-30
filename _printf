@@ -1,10 +1,4 @@
-#include "main.h"
-
-/**
- * _printf - Printf function
- * @format: format.
- * Return: Printed chars.
- */
+#include "maïn.h"
 
 int _printf(const char *format, ...)
 {
@@ -13,4 +7,29 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return -1;
-	va_start(char_lists, format);
+	va_start(char_lists, format;
+
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			write(1, format, 1);
+			printed_chars++;
+		}
+		else
+		{
+			format++;
+			if (*format == '\0')
+			break;
+	
+		if (*format == '%')
+		{
+			write(1, format, 1);
+			printed_chars++;
+		}
+		else if (*format == 'c')
+		{
+			char c = va_arg(char_lists, char);
+			write(1, &c, 1);
+			printed_chars++;
+		}
