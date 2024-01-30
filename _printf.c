@@ -1,55 +1,55 @@
-#include "main.h"
-
+include "main.h"
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
  * _printf - Printf function
  * @format: format.
- * Return: characters.
+ * Return: Printed chars.
  */
 int _printf(const char *format, ...)
 {
-	int k, counted = 0, printed_c = 0;
+	int p, prin_ted = 0, chars_printed = 0;
 	int flags, width, precision, size, buff_ind = 0;
-	va_list list_of_all_arguments;
+	va_list list_of_chars;
 	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(list_of_all_arguments, format);
+	va_start(list_of_chars, format);
 
-	for (k = 0; format && format[k] != '\0'; i++)
+	for (p = 0; format && format[p] != '\0'; p++)
 	{
-		if (format[k] != '%')
+		if (format[p] != '%')
 		{
-			buffer[buff_ind++] = format[k];
+			buffer[buff_ind++] = format[p];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
-			/* write(1, &format[k], 1);*/
-			printed_c++;
+			/* write(1, &format[p], 1);*/
+			chars_printed++;
 		}
 		else
 		{
 			print_buffer(buffer, &buff_ind);
-			flags = get_flags(format, &k);
-			width = get_width(format, &k, list_of_all_arguments);
-			precision = get_precision(format, &k, list_of_all_arguments);
-			size = get_size(format, &k);
-			++k;
-			counted = handle_print(format, &k, list_of_all_arguments, buffer,
+			flags = get_flags(format, &p);
+			width = get_width(format, &p, list_of_chars);
+			precision = get_precision(format, &p, list_of_chars);
+			size = get_size(format, &p);
+			++p;
+
+			prin_ted = handle_print(format, &p, list_of_chars, buffer,
 				flags, width, precision, size);
-			if (counted == -1)
-				return -1;
-			printed_c += counted;
+			if (prin_ted == -1)
+				return (-1);
+			chars_printed += prin_ted;
 		}
 	}
 
 	print_buffer(buffer, &buff_ind);
 
-	va_end(list_of_all_arguments);
+	va_end(list_of_chars);
 
-	return (printed_c);
+	return (chars_printed);
 }
 
 /**
@@ -64,3 +64,15 @@ void print_buffer(char buffer[], int *buff_ind)
 
 	*buff_ind = 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
