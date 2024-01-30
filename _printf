@@ -12,3 +12,26 @@ int _printf(const char *format, ...)
 	va_list char_lists;
 
 	if (format == NULL)
+		return -1;
+
+	va_start(char_lists, format);
+
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			write(1, format, 1);
+			printed_chars++;
+		}
+		else
+		{
+			format++;
+			if (*format == '\0')
+			break;
+		
+		if (*format == '%')
+		{
+			write(1, format, 1);
+			printed_chars++;
+		}
+			
