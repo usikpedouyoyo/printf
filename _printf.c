@@ -21,7 +21,11 @@ int _printf(const char *format, ...);
 		if(format[i] != '%')
 		{
 			func_to_print_characters(format[i]);
+		
 		}
+
+		counter += 1;
 	}
 	
+	return (counter)
 }
