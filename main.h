@@ -5,6 +5,5 @@
 #include <string.h>
 
 int _printf(const char *format, ...);
-#define BUFF_SIZE 1024
-
+int func_to_print_characters(char k);
 #endif
