@@ -1,4 +1,4 @@
-#include "main.h""
+#include "main.h"
 /**
  * putchar fucntion to print characters
  * @k: character input
@@ -7,3 +7,4 @@
 int func_to_print_characters(char k)
 {
 	return (write(1, &k, 1));
+}

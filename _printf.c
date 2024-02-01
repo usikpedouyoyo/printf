@@ -5,9 +5,9 @@
  * @format: format specifier
  * Return: no of bytes printed by function
  */
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
-	int i; counter = 0;
+	int i, counter = 0;
 
 	va_list my_list_of_arguments;
 
@@ -21,15 +21,15 @@ int _printf(const char *format, ...);
 		if(format[i] != '%')
 		{
 			func_to_print_characters(format[i]);
-		
 		}
 		if (format[i + 1] == 'c')
-		{
-			func_to_print_characters(va_arg(my_list_of_arguments, int));
+		{	
+		func_to_print_characters(va_arg(my_list_of_arguments, int));
+		i++;
 		}
 
 		counter += 1;
 	}
 	
-	return (counter)
+	return (counter);
 }
