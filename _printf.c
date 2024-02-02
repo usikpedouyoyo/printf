@@ -22,10 +22,14 @@ int _printf(const char *format, ...)
 		{
 			func_to_print_characters(format[i]);
 		}
-		if (format[i] == '%' &&  format[i + 1] == 'c')
+		else if (format[i] == '%' &&  format[i + 1] == 'c')
 		{	
 		func_to_print_characters(va_arg(my_list_of_arguments, int));
 		i++;
+		}
+		else if (format[ i + 1] == 's')
+		{
+			puts_function(
 		}
 
 		counter += 1;
