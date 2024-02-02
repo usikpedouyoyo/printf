@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
 #include <stdarg.h>
 #include <stdlib.h>
@@ -8,4 +8,5 @@
 int _printf(const char *format, ...);
 int func_to_print_characters(char k);
 int puts_function(char *c);
+
 #endif

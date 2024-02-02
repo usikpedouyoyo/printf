@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		{
 			func_to_print_characters(format[i]);
 		}
-		else if (format[i] == '%' && format[i + 1] == 'c')
+		 if (format[i] == '%' && format[i + 1] == 'c')
 		{	
 		func_to_print_characters(va_arg(my_list_of_arguments, int));
 		i++;
