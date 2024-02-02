@@ -7,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, counter = 0;
+	int i, string_counter,  counter = 0;
 
 	va_list my_list_of_arguments;
 
@@ -29,7 +29,9 @@ int _printf(const char *format, ...)
 		}
 		else if (format[ i + 1] == 's')
 		{
-			puts_function(
+			string_counter = puts_function(va_args(my_list_of_arguments, *char));
+			i++;
+			counter += (string_counter - 1);
 		}
 
 		counter += 1;
