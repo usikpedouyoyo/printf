@@ -7,5 +7,5 @@
 
 int _printf(const char *format, ...);
 int func_to_print_characters(char k);
-
+int puts_function(char *c);
 #endif
