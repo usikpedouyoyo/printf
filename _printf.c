@@ -33,9 +33,13 @@ int _printf(const char *format, ...)
 			i++;
 			counter += (string_counter - 1);
 		}
-
+		else if (format[i + 1] == '%')
+		{
+			func_to_print_characters('%');
+		}
 		counter += 1;
 	}
-	va_end(my_list_of_arguments);
+	
+		va_end(my_list_of_arguments);
 	return (counter);
 }
