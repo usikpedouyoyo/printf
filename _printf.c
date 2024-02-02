@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- *printf 
+ * _printf - function to print output to stdout
  *
- *@format: format specifier
-  Return: no of bytes printed by function
+ * @format: format specifier
+ * Return: no of bytes printed by function
  */
 int _printf(const char *format, ...)
 {
